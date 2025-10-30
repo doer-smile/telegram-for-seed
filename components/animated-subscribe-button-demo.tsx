@@ -7,7 +7,7 @@ type DemoProps = {
 	onClick?: () => void;
 };
 
-export function AnimatedSubscribeButtonDemo({ onClick }: DemoProps): JSX.Element {
+export function AnimatedSubscribeButtonDemo({ onClick }: DemoProps) {
 	return (
 		<AnimatedSubscribeButton
 			buttonColor="#000000"

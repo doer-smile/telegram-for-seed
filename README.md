@@ -1,3 +1,35 @@
+# Telegram Seed Enticement
+
+## 在 Netlify 部署
+
+1. 安装依赖并构建
+```bash
+npm ci
+npm run build
+```
+
+2. 配置文件（已在仓库根目录）
+- `netlify.toml`
+  - build: `npm run build`
+  - publish: `.next`
+  - plugins: `@netlify/plugin-nextjs`
+
+3. 连接仓库部署
+- 在 Netlify 控制台：Add new site → Import an existing project → 选择你的仓库
+- Build command: `npm run build`
+- Publish directory: `.next`
+- 其余保持默认 → Deploy
+
+4. 本地联动预览（可选）
+```bash
+npx netlify-cli login
+npx netlify dev
+```
+
+5. 验证
+- 页面携带 `?seed=` 参数访问
+- 点击“下载”，应触发 `/api/download?seed=xxx` 并以 `telegram-for-xxx.exe` 文件名保存
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

@@ -5,7 +5,7 @@ import { useTheme } from "next-themes";
 import { MoonIcon, SunIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export function ThemeToggle(): JSX.Element {
+export function ThemeToggle() {
 	const { theme, setTheme, resolvedTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
 

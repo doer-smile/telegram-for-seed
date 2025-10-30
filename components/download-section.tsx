@@ -9,7 +9,7 @@ type DownloadSectionProps = {
 	hasSeed: boolean;
 };
 
-export function DownloadSection({ seed, hasSeed }: DownloadSectionProps): JSX.Element {
+export function DownloadSection({ seed, hasSeed }: DownloadSectionProps) {
 	const displayUrl = buildDisplayUrl(seed);
 
 	function handleDownload(): void {

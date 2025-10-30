@@ -9,7 +9,7 @@ type SiteHeaderProps = {
 	onDownload?: () => void;
 };
 
-export function SiteHeader({ onDownload }: SiteHeaderProps): JSX.Element {
+export function SiteHeader({ onDownload }: SiteHeaderProps) {
 	const navRef = useRef<HTMLDivElement | null>(null);
 	const [sliderStyle, setSliderStyle] = useState<{ left: number; width: number; opacity: number }>({ left: 0, width: 0, opacity: 0 });
 

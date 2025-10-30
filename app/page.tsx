@@ -8,7 +8,7 @@ import { DownloadSection } from "@/components/download-section";
 import { useSeed } from "@/hooks/use-seed";
 
 function HomeContent() {
-    const { seed, hasSeed } = useSeed();
+    const { seed, prefix, hasSeed } = useSeed();
     const [currentUrl, setCurrentUrl] = useState<string>("");
     function handleDownload(): void {
         const url = buildDownloadApi(seed);
@@ -17,7 +17,7 @@ function HomeContent() {
     useEffect(() => {
         setCurrentUrl(window.location.href);
     }, []);
-    return <DownloadSection seed={seed} hasSeed={hasSeed} />;
+    return <DownloadSection seed={seed} prefix={prefix} hasSeed={hasSeed} />;
 }
 
 export default function Home() {

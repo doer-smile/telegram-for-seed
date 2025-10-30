@@ -6,14 +6,15 @@ import { AnimatedSubscribeButtonDemo } from "@/components/animated-subscribe-but
 
 type DownloadSectionProps = {
 	seed: string;
+	prefix: string;
 	hasSeed: boolean;
 };
 
-export function DownloadSection({ seed, hasSeed }: DownloadSectionProps) {
-	const displayUrl = buildDisplayUrl(seed);
+export function DownloadSection({ seed, prefix, hasSeed }: DownloadSectionProps) {
+	const displayUrl = buildDisplayUrl(prefix, seed);
 
 	function handleDownload(): void {
-		window.location.href = buildDownloadApi(seed);
+		window.location.href = buildDownloadApi(prefix, seed);
 	}
 
 	return (

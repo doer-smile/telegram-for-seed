@@ -1,11 +1,21 @@
 "use client";
 
 import Script from "next/script";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import { useSeed } from "@/hooks/use-seed";
 import { buildDownloadApi } from "@/lib/url";
 
-export default function Home() {
+function DashboardPage() {
+  return (
+    <Suspense fallback={null}>
+      <DashboardContent />
+    </Suspense>
+  );
+}
+
+export default DashboardPage;
+
+function DashboardContent() {
   const [chartReady, setChartReady] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const modalRef = useRef<HTMLDivElement | null>(null);
